@@ -7,29 +7,26 @@ if exists("b:current_syntax")
   finish
 endif
 
+runtime! syntax/css.vim
+
+set iskeyword+=@-@,-
 " Keywords
-syn keyword sassConstant normal, bold, italic
+syn keyword sassImport @import
+syn keyword sassInclude @inlcude
+syn keyword sassMixin @mixin
 
 " Matches
 syn match sassOperator '&'
-syn match sassOperator '+'
-syn match sassOperator '-'
-syn match sassOperator '*'
-syn match sassOperator '/'
+syn match sassOperator ':'
+syn match sassOperator '\s+\s'
+syn match sassOperator '\s-\s'
+syn match sassOperator '\s*\s'
+syn match sassOperator '\s/\s'
 
-syn match sassImport '@import'
-syn match sassInclude '@inlcude'
 syn match sassInclude '^\s*+[-_a-zA-Z]\+'
-syn match sassMixin '@mixin'
 syn match sassMixin '^\s*=[-_a-zA-Z]\+'
 
 syn match sassVariable '$[-_a-zA-Z]\+'
-
-syn match sassConstant '[0-9]\+px'
-syn match sassConstant '[.0-9]\+em'
-syn match sassConstant '[.0-9]\+rem'
-syn match sassConstant '#\x\{3}'
-syn match sassConstant '#\x\{6}'
 
 " Regions
 syn region sassString start=/"/ skip=/\./ end=/"/
@@ -45,7 +42,6 @@ hi def link sassMixin       PreProc
 
 hi def link sassVariable    Variable
 hi def link sassOperator    Operator
-hi def link sassConstant    Constant
 
 hi def link sassString      String
 hi def link sassComment     Comment

@@ -33,6 +33,7 @@ exe 'hi PreProc     guifg=' .s:salmon
 
 exe 'hi Variable    guifg=' .s:cerulean
 exe 'hi Operator    guifg=' .s:sky_blue                                     .' gui=bold'
+exe 'hi Keyword     guifg=' .s:sky_blue
 exe 'hi Constant    guifg=' .s:pink
 
 exe 'hi String      guifg=' .s:emerald
