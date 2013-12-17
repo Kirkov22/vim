@@ -33,7 +33,7 @@ augroup file_ruby
   " Comment line shortcut
   autocmd FileType ruby nnoremap <buffer> <localleader>c gI# <esc>
   " Uncomment line shortcut
-  autocmd FileType ruby nnoremap <buffer> <localleader>u s/#//
+  autocmd FileType ruby nnoremap <buffer> <localleader>u :s/#\s\=// <enter>
 augroup END
 
 augroup file_sass
@@ -41,7 +41,15 @@ augroup file_sass
   " Comment line shortcut
   autocmd FileType sass nnoremap <buffer> <localleader>c I//<esc>
   " Uncomment line shortcut
-  autocmd FileType sass nnoremap <buffer> <localleader>u s/\/\///
+  autocmd FileType sass nnoremap <buffer> <localleader>u :s/\/\/\s\=// <enter>
+augroup END
+
+augroup file_scss
+  autocmd!
+  " Comment line shortcut
+  autocmd FileType scss nnoremap <buffer> <localleader>c I//<esc>
+  " Uncomment line shortcut
+  autocmd FileType scss nnoremap <buffer> <localleader>u :s/\/\/\s\=// <enter>
 augroup END
 
 augroup file_vim
@@ -49,7 +57,7 @@ augroup file_vim
   " Comment line shortcut
   autocmd FileType vim  nnoremap <buffer> <localleader>c gI" <esc>
   " Uncomment line shortcut
-  autocmd FileType vim  nnoremap <buffer> <localleader>u s/"//
+  autocmd FileType vim  nnoremap <buffer> <localleader>u :s/"\s\=// <enter>
 augroup END
 
 
