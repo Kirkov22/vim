@@ -10,7 +10,7 @@ endif
 set iskeyword+=-
 
 " Keywords
-syn keyword cssConstant inherit none
+syn keyword cssConstant inherit none auto
 syn keyword cssConstant normal bold italic
 syn keyword cssConstant center left right
 syn keyword cssConstant inline block inline-block list-item table inline-table
@@ -31,9 +31,14 @@ syn keyword cssKeyword text-direction text-decoration text-transform
 syn keyword cssKeyword letter-spacing word-spacing
 syn keyword cssKeyword text-shadow box-shadow
 syn keyword cssKeyword list-style-type list-style-position list-style-image
-syn keyword cssKeyword display
+syn keyword cssKeyword display position width height min-width max-width min-height max-height
+syn keyword cssKeyword background background-image background-size background-position
+syn keyword cssKeyword background-repeat background-attachment
 
 " Matches
+syn match cssConstant '[.0-9]\+s'
+syn match cssConstant '[.0-9]\+%'
+syn match cssConstant '[.0-9]\+deg'
 syn match cssConstant '[0-9]\+px'
 syn match cssConstant '[.0-9]\+em'
 syn match cssConstant '[.0-9]\+rem'

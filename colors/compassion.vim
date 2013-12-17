@@ -21,6 +21,7 @@ let s:pale_yellow = "#DADBB1"
 let s:sky_blue = "#6CC7EB"
 let s:cerulean = "#3D95E6"
 let s:pink = "#FFA0A0"
+let s:violet = "#A999AC"
 
 " Background & Cursors
 hi Visual guibg=#404040
@@ -33,7 +34,7 @@ exe 'hi PreProc     guifg=' .s:salmon
 
 exe 'hi Variable    guifg=' .s:cerulean
 exe 'hi Operator    guifg=' .s:sky_blue                                     .' gui=bold'
-exe 'hi Keyword     guifg=' .s:sky_blue
+exe 'hi Keyword     guifg=' .s:violet
 exe 'hi Constant    guifg=' .s:pink
 
 exe 'hi String      guifg=' .s:emerald
