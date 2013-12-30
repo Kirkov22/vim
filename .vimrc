@@ -56,35 +56,43 @@ onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 
+augroup file_haml
+  autocmd!
+  " Comment line
+  autocmd FileType haml nnoremap <buffer> <localleader>c I-# <esc>
+  " Uncomment line
+  autocmd FileType haml nnoremap <buffer> <localleader>u :s/-#\s\=// <enter>
+augroup END
+
 augroup file_ruby
   autocmd!
-  " Comment line shortcut
+  " Comment line
   autocmd FileType ruby nnoremap <buffer> <localleader>c gI# <esc>
-  " Uncomment line shortcut
+  " Uncomment line
   autocmd FileType ruby nnoremap <buffer> <localleader>u :s/#\s\=// <enter>
 augroup END
 
 augroup file_sass
   autocmd!
-  " Comment line shortcut
+  " Comment line
   autocmd FileType sass nnoremap <buffer> <localleader>c I//<esc>
-  " Uncomment line shortcut
+  " Uncomment line
   autocmd FileType sass nnoremap <buffer> <localleader>u :s/\/\/\s\=// <enter>
 augroup END
 
 augroup file_scss
   autocmd!
-  " Comment line shortcut
+  " Comment line
   autocmd FileType scss nnoremap <buffer> <localleader>c I//<esc>
-  " Uncomment line shortcut
+  " Uncomment line
   autocmd FileType scss nnoremap <buffer> <localleader>u :s/\/\/\s\=// <enter>
 augroup END
 
 augroup file_vim
   autocmd!
-  " Comment line shortcut
+  " Comment line
   autocmd FileType vim  nnoremap <buffer> <localleader>c gI" <esc>
-  " Uncomment line shortcut
+  " Uncomment line
   autocmd FileType vim  nnoremap <buffer> <localleader>u :s/"\s\=// <enter>
 augroup END
 
