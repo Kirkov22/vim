@@ -1,14 +1,35 @@
 color twilight
+" Always show the status line
+set laststatus=2
+" File name[filetype], Current Line / Total Lines
+set statusline=%t
+set statusline+=%y
+set statusline+=,\ Line:\ %l
+set statusline+=\/\ %L
+" On right side, relative path to file
+set statusline+=%=
+set statusline+=%f
+" Show line numbers, 3 digits wide by default
 set number
+set numberwidth=4
+" Ignore case in search patterns
 set ignorecase
+" Begin wrapping 8 characters from window border
 set wrapmargin=8
+" Begin new lines with indent from previous line
 set autoindent
+" Turn on enhanced command line completion
 set wildmenu
+" Use spaces in place of tabs
 set expandtab
+" Tab-stop = 2
 set tabstop=2
 set shiftwidth=2
+" Place swap files in ...
 set directory=~/tmp
+" Enable filetype plugins
 filetype plugin on
+
 " --------
 " Mappings
 " --------
@@ -20,13 +41,20 @@ let maplocalleader = "\\"
 " Alternative exit from Insert Mode
 inoremap jk <esc>
 
-" Capitalize the Current Word
+" UPPERCASE the Current Word
 inoremap <c-u> <esc>lviwUi
 nnoremap <c-u> viwU
 
 " Alternative 'to beginning/end of line'
 nnoremap H ^
 nnoremap L $
+
+" Alternative to 'in-parenthesis'
+onoremap p i(
+
+" Replace 'next parenthesis'/'last parenthesis'
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
 
 augroup file_ruby
   autocmd!
