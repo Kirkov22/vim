@@ -1,34 +1,37 @@
 color twilight
-" Always show the status line
-set laststatus=2
-" File name[filetype], Current Line / Total Lines
-set statusline=%t
-set statusline+=%y
-set statusline+=,\ Line:\ %l
-set statusline+=\/\ %L
-" On right side, relative path to file
-set statusline+=%=
-set statusline+=%f
-" Show line numbers, 3 digits wide by default
-set number
-set numberwidth=4
-" Ignore case in search patterns
-set ignorecase
-" Begin wrapping 8 characters from window border
-set wrapmargin=8
-" Begin new lines with indent from previous line
-set autoindent
-" Turn on enhanced command line completion
-set wildmenu
-" Use spaces in place of tabs
-set expandtab
-" Tab-stop = 2
-set tabstop=2
+set laststatus=2                      " Always show the status line
+set statusline=Editing\ %t            " Filename
+set statusline+=%y                    " Filetype
+set statusline+=,\ Line:\ %l          " Line: lineno.
+set statusline+=\/\ %L                " / Total-Lines
+set statusline+=,\ col:\ %c           " , col: colno.
+set statusline+=\ -\ %{CurrentWord()} " - <cword> 
+set statusline+=%=                    " On right side ...
+set statusline+=%f                    " relative path
+function! CurrentWord()
+  return expand("<cword>")
+endfunction
+
+
+set number                    " Show line numbers
+set numberwidth=4             " Default 3 digits wide
+
+set ignorecase                " Ignore case in search patterns
+
+set wrapmargin=8              " Begin wrapping 8 characters from window border
+
+set autoindent                " Begin new lines with indent from previous line
+
+set wildmenu                  " Turn on enhanced command line completion
+
+set expandtab                 " Use spaces in place of tabs
+
+set tabstop=2                 " Tab-stop = 2
 set shiftwidth=2
-" Place swap files in ...
-set directory=~/tmp
-" Enable filetype plugins
-filetype plugin on
+
+set directory=~/tmp           " Place swap files in ...
+
+filetype plugin on            " Enable filetype plugins 
 
 " --------
 " Mappings
