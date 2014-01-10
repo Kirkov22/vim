@@ -3,7 +3,7 @@ execute pathogen#infect()
 
 "Use w0ng's vim-hybrid color scheme
 let g:hybrid_use_Xresources = 1
-color hybrid
+color compassion
 
 set laststatus=2                      " Always show the status line
 set statusline=Editing\ %t            " Filename
