@@ -37,7 +37,7 @@ hi def link scssInclude     PreProc
 hi def link scssImport      PreProc
 hi def link scssMixin       PreProc
 
-hi def link scssVariable    Variable
+hi def link scssVariable    Identifier
 hi def link scssOperator    Operator
 
 hi def link scssString      String

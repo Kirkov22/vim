@@ -12,12 +12,16 @@ set statusline+=,\ Line:\ %l          " Line: lineno.
 set statusline+=\/\ %L                " / Total-Lines
 set statusline+=,\ col:\ %c           " , col: colno.
 set statusline+=\ -\ %{CurrentWord()} " - <cword> 
+set statusline+=[%{SyntaxItem()}]     " [SyntaxGroup]
 set statusline+=%=                    " On right side ...
 set statusline+=%f                    " relative path
 function! CurrentWord()
   return expand("<cword>")
 endfunction
-
+" From vim wiki
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
 
 set number                    " Show line numbers
 set numberwidth=4             " Default 3 digits wide
@@ -104,7 +108,6 @@ augroup file_vim
   " Uncomment line
   autocmd FileType vim  nnoremap <buffer> <localleader>u :s/"\s\=// <enter>
 augroup END
-
 
 " Add blank lines but stay in normal mode
 nnoremap <leader>o o<esc>

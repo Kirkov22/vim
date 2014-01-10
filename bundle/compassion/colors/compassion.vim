@@ -78,18 +78,28 @@ let colors_name = "hybrid"
 " ----------------------------------------------------------------------------
 if has("gui_running")
   let s:vmode      = "gui"
-  let s:background = "#1d1f21"
-  let s:foreground = "#c5c8c6"
+"   let s:background = "#1d1f21"
+  let s:background = "#1A1A1A"  " Powder Black
+"   let s:foreground = "#c5c8c6"
+  let s:foreground = "#DADBB1"  " Pale Yellow
   let s:selection  = "#373b41"
-  let s:line       = "#282a2e"
-  let s:comment    = "#707880"
-  let s:red        = "#cc6666"
-  let s:orange     = "#de935f"
+"   let s:line       = "#282a2e"
+  let s:line       = "#282828"  " Dark Gray
+"   let s:comment    = "#707880"
+  let s:comment    = "#909090"  " Mid Gray
+"   let s:red        = "#cc6666"
+  let s:red        = "#CD5C57"  " Salmon
+  let s:orange     = "#DE935F"
   let s:yellow     = "#f0c674"
-  let s:green      = "#b5bd68"
-  let s:aqua       = "#8abeb7"
-  let s:blue       = "#81a2be"
-  let s:purple     = "#b294bb"
+"   let s:green      = "#b5bd68"
+  let s:green      = "#64B041"  " Emerald
+"   let s:aqua       = "#8abeb7"
+  let s:aqua       = "#6CC7EB"  " Sky Blue
+"   let s:blue       = "#81a2be"
+  let s:blue       = "#3D95E6"  " Cerulean
+"   let s:purple     = "#b294bb"
+  let s:purple     = "#A999AC"  " Violet
+  let s:pink       = "#FFA0A0"  " Pink
   let s:window     = "#303030"
   let s:darkcolumn = "#1c1c1c"
   let s:addbg      = "#5F875F"
@@ -117,6 +127,7 @@ else
     let s:aqua       = "14"   " LightCyan
     let s:blue       = "12"   " LightBlue
     let s:purple     = "13"   " LightMagenta
+    let s:pink       = "13"   " LightMagenta
   elseif g:hybrid_use_iTerm_colors == 1
     let s:background = "8"
     let s:foreground = "15"
@@ -130,6 +141,7 @@ else
     let s:aqua       = "6"
     let s:blue       = "4"
     let s:purple     = "5"
+    let s:pink       = "5"
     let s:darkcolumn = "11"
     let s:addbg      = "10"
     let s:changebg   = "12"
@@ -145,6 +157,7 @@ else
     let s:aqua       = "109"
     let s:blue       = "110"
     let s:purple     = "139"
+    let s:pink       = "139"
   endif
 endif
 
@@ -177,6 +190,7 @@ exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
 exe "let s:bg_purple     = ' ".s:vmode."bg=".s:purple    ."'"
+exe "let s:bg_pink       = ' ".s:vmode."bg=".s:pink      ."'"
 exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
 exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
 exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
@@ -197,6 +211,7 @@ exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
 exe "let s:fg_purple     = ' ".s:vmode."fg=".s:purple    ."'"
+exe "let s:fg_pink       = ' ".s:vmode."fg=".s:pink      ."'"
 exe "let s:fg_window     = ' ".s:vmode."fg=".s:window    ."'"
 exe "let s:fg_darkcolumn = ' ".s:vmode."fg=".s:darkcolumn."'"
 exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
@@ -276,7 +291,8 @@ exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "		Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+" exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_comment     .s:bg_line        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
@@ -316,47 +332,47 @@ endif
 " ----------------------------------------------------------------------------
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
-exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "		Character"
 "		Number"
 "		Boolean"
 "		Float"
 
-exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_red         .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
 "		Conditional"
 "		Repeat"
 "		Label"
-exe "hi! Operator"        .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Operator"        .s:fg_purple      .s:bg_none        .s:fmt_none
 "		Keyword"
 "		Exception"
 
-exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Include"
 "		Define"
 "		Macro"
 "		PreCondit"
 
-exe "hi! Type"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_blue        .s:bg_none        .s:fmt_none
 "		StorageClass"
-exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Structure"       .s:fg_orange      .s:bg_none        .s:fmt_none
 "		Typedef"
 
-exe "hi! Special"         .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 "		SpecialChar"
 "		Tag"
 "		Delimiter"
 "		SpecialComment"
 "		Debug"
 "
-exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
+exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_undr
 
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 
-exe "hi! Error"           .s:fg_red         .s:bg_none        .s:fmt_undr
+exe "hi! Error"           .s:fg_background  .s:bg_red         .s:fmt_none
 
 exe "hi! Todo"            .s:fg_addfg       .s:bg_none        .s:fmt_none
 

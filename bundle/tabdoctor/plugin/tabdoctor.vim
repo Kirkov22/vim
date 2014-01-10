@@ -19,6 +19,14 @@ augroup tabdoctor
         \ let b:cont_to = "= + - / \* && || ," |
         \ let b:cont_from = "= + - /\= \* && ||" |
         \ let b:end_block = "}"
+  autocmd FileType scss
+        \ let b:seperator = '\s' |
+        \ let b:comment = '// /\*' |
+        \ let b:literal = "' \"" |
+        \ let b:start_block = "{" |
+        \ let b:cont_to = ": ," |
+        \ let b:cont_from = "" |
+        \ let b:end_block = "}"
 augroup END
 
 nnoremap <leader><tab> :call <SID>retab_block()<cr>
