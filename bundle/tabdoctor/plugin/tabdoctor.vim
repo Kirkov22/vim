@@ -15,18 +15,18 @@ augroup tabdoctor
         \ let b:seperator = '\s' |
         \ let b:comment = '//' |
         \ let b:literal = "' \"" |
-        \ let b:start_block = "{" |
-        \ let b:cont_to = "= + - / \* && || ," |
-        \ let b:cont_from = "= + - /\= \* && ||" |
-        \ let b:end_block = "}"
+        \ let b:start_block = '{' |
+        \ let b:cont_to = '= + - / \* && || ,' |
+        \ let b:cont_from = '= + - /\= \* && ||' |
+        \ let b:end_block = '}'
   autocmd FileType scss
         \ let b:seperator = '\s' |
         \ let b:comment = '// /\*' |
         \ let b:literal = "' \"" |
-        \ let b:start_block = "{" |
-        \ let b:cont_to = ": ," |
-        \ let b:cont_from = "" |
-        \ let b:end_block = "}"
+        \ let b:start_block = '{' |
+        \ let b:cont_to = ': ,' |
+        \ let b:cont_from = '' |
+        \ let b:end_block = '}'
 augroup END
 
 nnoremap <leader><tab> :call <SID>retab_block()<cr>
@@ -113,12 +113,13 @@ function! s:retab(tab_char, block_indent,
   " Assign arguments that need to be modified to local variables
   let l:block_count = a:block_count
   let l:indent_next = a:indent_next
-  
+
   " Read line
   let l:line = getline(a:line_no)
 
   " Remove comments and literals
   let l:line = substitute(l:line, a:comments, '', '')
+
   for l:literal in a:literals
     let l:line = substitute(l:line, l:literal.'.\{-}'.l:literal, '', 'g')
   endfor
@@ -127,7 +128,7 @@ function! s:retab(tab_char, block_indent,
   let l:block_count -= s:count_matches(l:line, a:end_pat)
   
   " If not previously indicated ...
-  if !l:indent_next
+  if !l:indent_next && b:cont_from !=# ''
     " ... check if this line is continued from previous
     let l:indent_next = l:line =~? a:cont_from_pat
   endif
@@ -142,7 +143,9 @@ function! s:retab(tab_char, block_indent,
   endif
 
   " Check if next line should be indented
-  let l:indent_next = l:line =~? a:cont_to_pat
+  if b:cont_to !=# ''
+    let l:indent_next = l:line =~? a:cont_to_pat
+  endif
 
   " Increase indent count by number of start blocks on this line
   let l:block_count += s:count_matches(l:line, a:start_pat)

@@ -1,8 +1,7 @@
 " Enable Pathogen
 execute pathogen#infect()
 
-"Use w0ng's vim-hybrid color scheme
-let g:hybrid_use_Xresources = 1
+"Use modified w0ng's vim-hybrid color scheme
 color compassion
 
 set laststatus=2                      " Always show the status line
