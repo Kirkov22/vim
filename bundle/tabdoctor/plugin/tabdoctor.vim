@@ -24,11 +24,11 @@ augroup tabdoctor
         \ let b:seperator = '\s' |
         \ let b:comment = '#' |
         \ let b:literal = "' \"" |
-        \ let b:start_block = '^\s*def ^\s*module ^\s*class ^\s*if ^\s*unless ^\s*begin ^\s*case \sdo {\(.*}\)\@! else\s\= when\s\= rescue\s\=' |
+        \ let b:start_block = '^\s*def ^\s*module ^\s*class ^\s*if ^\s*unless ^\s*begin ^\s*case \sdo {\(.*}\)\@! els\(e\|if\)\s\= when\s\= rescue\s\=' |
         \ let b:cont_to = '\\' |
         \ let b:cont_from = '' |
         \ let b:doc_region = '<<' |
-        \ let b:end_block = 'end \({.*\)\@<!} else\s\= when\s\= rescue\s\='
+        \ let b:end_block = 'end \({.*\)\@<!} els\(e\|if\)\s\= when\s\= rescue\s\='
   autocmd FileType scss
         \ let b:seperator = '\s' |
         \ let b:comment = '// /\*' |
