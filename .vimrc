@@ -42,6 +42,8 @@ set directory=~/tmp           " Place swap files in ...
 
 filetype plugin on            " Enable filetype plugins 
 
+" Disable autocommenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " --------
 " Mappings
 " --------
