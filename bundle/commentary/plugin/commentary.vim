@@ -13,13 +13,13 @@ augroup END
 augroup file_java
   autocmd!
   " Comment line
-  autocmd FileType java nnoremap <buffer> <localleader>c gI// <esc>
+  autocmd FileType java* nnoremap <buffer> <localleader>c gI// <esc>
   " Comment selected lines
-  autocmd FileType java vnoremap <buffer> <localleader>c :s/^/\/\/ /<enter>
+  autocmd FileType java* vnoremap <buffer> <localleader>c :s/^/\/\/ /<enter>
   " Uncomment line
-  autocmd FileType java nnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+  autocmd FileType java* nnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
   " Uncomment selected lines
-  autocmd FileType java vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+  autocmd FileType java* vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
 augroup END
 
 augroup file_ruby
