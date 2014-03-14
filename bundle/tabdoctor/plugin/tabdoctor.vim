@@ -24,7 +24,7 @@ augroup tabdoctor
         \ let b:seperator   = '\s' |
         \ let b:comment     = '#' |
         \ let b:literal     = "' \"" |
-        \ let b:start_block = '^\s*\(def\|module\|class\|if\|unless\|begin\|case\) \s\+do {\(.*}\)\@! els\(e\|if\)\s\= when\s\= rescue\s\=' |
+        \ let b:start_block = '^\s*\(def\|module\|class\|if\|unless\|begin\|case\)\(\s\|$\) \s\+do {\(.*}\)\@! els\(e\|if\)\s\= when\s\= rescue\s\=' |
         \ let b:indent_next = '\\' |
         \ let b:indent_this = ';\send' |
         \ let b:doc_region  = '<<' |
