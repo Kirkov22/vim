@@ -1,9 +1,3 @@
-" Enable Pathogen
-execute pathogen#infect()
-
-"Use modified w0ng's vim-hybrid color scheme
-color compassion
-
 set laststatus=2                      " Always show the status line
 set statusline=Editing\ %t            " Filename
 set statusline+=%y                    " Filetype
@@ -44,6 +38,21 @@ filetype plugin on            " Enable filetype plugins
 
 " Disable autocommenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" ---------------
+" Plugin Specific
+" ---------------
+
+" Enable Pathogen
+execute pathogen#infect()
+
+" Use modified w0ng's vim-hybrid color scheme
+color compassion
+
+" Set Indent Guide's start level to 2 and size to 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 " --------
 " Mappings
 " --------
