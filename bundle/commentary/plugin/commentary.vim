@@ -69,3 +69,11 @@ augroup file_vim
   " Uncomment selected lines
   autocmd FileType vim vnoremap <buffer> <localleader>u :s/"\s\=//<enter>
 augroup END
+
+augroup file_sh
+  autocmd!
+  " Comment line
+  autocmd FileType z\=sh nnoremap <buffer> <localleader>c I# <esc>
+  " Uncomment line
+  autocmd FileType z\=sh nnoremap <buffer> <localleader>u :s/# //<enter>
+augroup END
