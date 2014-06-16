@@ -47,6 +47,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 execute pathogen#infect()
 
 " Use modified w0ng's vim-hybrid color scheme
+let g:hybrid_use_Xresources = 1
 color compassion
 
 " Set Indent Guide's start level to 2 and size to 1
