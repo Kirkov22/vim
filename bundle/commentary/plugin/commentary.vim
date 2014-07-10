@@ -22,6 +22,18 @@ augroup file_java
   autocmd FileType java* vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
 augroup END
 
+augroup file_c
+  autocmd!
+  " Comment line
+  autocmd FileType c* nnoremap <buffer> <localleader>c gI// <esc>
+  " Comment selected lines
+  autocmd FileType c* vnoremap <buffer> <localleader>c :s/^/\/\/ /<enter>
+  " Uncomment line
+  autocmd FileType c* nnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+  " Uncomment selected lines
+  autocmd FileType c* vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+augroup END
+
 augroup file_ruby
   autocmd!
   " Comment line
