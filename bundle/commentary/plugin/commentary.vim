@@ -34,6 +34,18 @@ augroup file_c
   autocmd FileType c* vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
 augroup END
 
+augroup file_haskell
+  autocmd!
+  " Comment line
+  autocmd FileType haskell nnoremap <buffer> <localleader>c gI-- <esc>
+  " Comment selected lines
+  autocmd FileType haskell vnoremap <buffer> <localleader>c :s/^/-- /<enter>
+  " Uncomment line
+  autocmd FileType haskell nnoremap <buffer> <localleader>u :s/--\s\=//<enter>
+  " Uncomment selected lines
+  autocmd FileType haskell vnoremap <buffer> <localleader>u :s/--\s\=//<enter>
+augroup END
+
 augroup file_ruby
   autocmd!
   " Comment line
