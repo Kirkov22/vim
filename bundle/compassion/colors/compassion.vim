@@ -118,12 +118,9 @@ else
   if g:hybrid_use_Xresources == 1
     let s:foreground = "11"   " Pale Yellow
 "     let s:foreground = "15"   " White
-    let s:selection  = "0"    " Dark Grey
-"     let s:selection  = "8"    " DarkGrey
-    let s:line       = "0"    " Dark Grey
-"     let s:line       = "0"    " Black
-    let s:comment    = "8"    " Mid Grey
-"     let s:comment    = "7"    " LightGrey
+    let s:selection  = "8"    " DarkGrey
+    let s:line       = "0"    " PowderBlack
+    let s:comment    = "7"    " LightGrey
     let s:red        = "1"    " Salmon
 "     let s:red        = "9"    " LightRed
     let s:orange     = "3"    " DarkYellow
