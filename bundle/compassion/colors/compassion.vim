@@ -71,7 +71,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "hybrid"
+let colors_name = "compassion"
 
 "}}}
 " GUI And Cterm Palettes:"{{{
@@ -119,7 +119,8 @@ else
     let s:foreground = "11"   " Pale Yellow
 "     let s:foreground = "15"   " White
     let s:selection  = "8"    " DarkGrey
-    let s:line       = "0"    " PowderBlack
+    let s:line       = "8"    " DarkGrey
+"     let s:line       = "0"    " PowderBlack
     let s:comment    = "7"    " LightGrey
     let s:red        = "1"    " Salmon
 "     let s:red        = "9"    " LightRed
