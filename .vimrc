@@ -35,6 +35,7 @@ set shiftwidth=2
 set directory=~/tmp           " Place swap files in ...
 
 filetype plugin on            " Enable filetype plugins 
+syntax on                     " Enable syntax highlighting
 
 " Disable autocommenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
