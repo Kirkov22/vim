@@ -34,6 +34,18 @@ augroup file_c
   autocmd FileType c* vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
 augroup END
 
+augroup file_rust
+  autocmd!
+  " Comment line
+  autocmd FileType rust nnoremap <buffer> <localleader>c gI// <esc>
+  " Comment selected lines
+  autocmd FileType rust vnoremap <buffer> <localleader>c :s/^/\/\/ /<enter>
+  " Uncomment line
+  autocmd FileType rust nnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+  " Uncomment selected lines
+  autocmd FileType rust vnoremap <buffer> <localleader>u :s/\/\/\s\=//<enter>
+augroup END
+
 augroup file_haskell
   autocmd!
   " Comment line
