@@ -34,6 +34,9 @@ set shiftwidth=2
 
 set directory=~/tmp           " Place swap files in ...
 
+set list                      " Show hidden characters(EOL, etc.)
+set listchars=eol:¬,trail:·   " Show EOL, trailing spaces
+
 filetype plugin on            " Enable filetype plugins 
 syntax on                     " Enable syntax highlighting
 
@@ -54,6 +57,17 @@ color compassion
 " Set Indent Guide's start level to 2 and size to 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" -----------
+" OS Specific
+" -----------
+
+" Italics on OS X/iTerm2
+if (&term =~? '^xterm-256color') &&
+  \ (has('macunix') || system('uname') =~? '^darwin')
+  set t_ZH=[3m
+  set t_ZR=[23m
+endif
 
 " --------
 " Mappings
