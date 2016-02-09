@@ -33,7 +33,7 @@ hi link splunkOperator Operator
 hi link splunkComment Comment
 let s:commentCterm = s:comment_cterm()
 let s:commentGui = s:comment_gui()
-exe "hi splunkNotes cterm=italic ctermfg=" . 
+exe "hi splunkNotes cterm=italic gui=italic ctermfg=" . 
   \ s:commentCterm . " guifg=" . s:commentGui
 
 let b:current_syntax = "splunk_conf"
